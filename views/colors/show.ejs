@@ -1,0 +1,34 @@
+<% layout('layouts/boilerplate')%>
+<div class="row">
+ <div class="col-6 offset-3">
+
+  <div class="card mb=3">
+   <img src="<%=color.image%>" class="card-img-top" alt="...">
+   <div class="card-body">
+    <h5 class="card-title"><%=color.name%></h5>
+    <h5 class="card-title">Hex: <%=color.hexvalue%> <br>
+     RGB: <%=color.rgbvalue%> <br>
+     HSL: <%=color.hslvalue%></h5>
+    <p class="card-text"><%=color.description%></p>
+   </div>
+   <ul class="list-group list-group-flush">
+    <li class="list-group-item"><%= color.city %>, <%= color.administrativeArea %>, <%= color.country %></li>
+    <li class="list-group-item">Population:<%=color.population%></li>
+    <li class="list-group-item">Price: $<%=color.price%></li>
+    <li class="list-group-item">Complimentary Value: <%=color.comp%></li>
+    <li class="list-group-item">LAB: <%=color.LAB%></li>
+    <li class="list-group-item">XYZ: <%=color.XYZ%></li>
+    <li class="list-group-item">Analog Colors: <%=color.analog1%> and <%=color.analog2%></li>
+    <li class="list-group-item">Split Complimentary: <%=color.splitComp1%> and <%=color.splitComp2%></li>
+   </ul>
+   <div class="card-body">
+    <a class="btn btn-info mb=3" href="/colors/<%=color._id%>/edit">Edit details</a>
+    <form class = "d-inline" action="/colors/<%=color._id%>?_method=DELETE" method="POST">
+     <button class="btn btn-danger mb=3">Delete Color</button>
+    </form>
+    <a class="btn btn-primary mb=3" href="/colors">Return to all colors</a>
+    
+   </div>
+  </div>
+ </div>
+</div>

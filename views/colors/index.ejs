@@ -1,0 +1,33 @@
+<% layout('layouts/boilerplate')%>
+ <h1>All Colors</h1>
+ 
+
+  <a class = " btn btn-info mb=3"  href="/colors/new">New Color</a>
+ 
+ 
+  <% for (let color of colors){%>
+   <div class="card" mb=3>
+    <div class="row">
+     <div class="col-md-4">
+      <img class="img-fluid" alt="" src = "<%=color.image%>">
+     </div>
+     <div class="col-md-8">
+      <div class="card-body">
+       <h2 class="card-title"><%=color.name%></h2>
+       <p class="card-text"><%= color.description%></p>
+       <p class="card-text">
+        <small class="text-muted">
+         <%=color.city%>
+         <%=color.administrativeArea%>
+         <%=color.country%>
+        </small>
+        <small class="text-muted">Population: <%=color.population%></small>
+       </p>
+       <a href="/colors/<%=color._id%>" class="btn btn-primary">View <%=color.name%></a>
+      </div>
+     </div>
+    </div>
+   </div>
+  
+  <% }%>
+ 

@@ -1,0 +1,84 @@
+<% layout('layouts/boilerplate')%>
+  <div class="row">
+    <h1 class="text-center">Edit Color</h1>
+    <div class="col-6 offset-3">
+      <form action="/colors/<%=color._id%>?_method=PUT" method="POST" novalidate class = "validated-form">
+      <div class="mb-3">
+        <label class="form-label" for="colorName">Color Name:</label>
+        <input class="form-control" type="text" placeholder="Color Name" name="color[name]" id=colorName value = "<%=color.name%>" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="hexvalue">Hex Value:</label>
+        <input class="form-control" type="text" placeholder="Hex Value" id="hexvalue" name="color[hexvalue]" value = "<%=color.hexvalue%>" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="location">City:</label>
+        <input class="form-control" type="text" placeholder="City" id="city" name="color[city]"value = "<%=color.city%>" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="administrativeArea">Adminsitrative Area:</label>
+        <input class="form-control" type="text" placeholder="State/Province/Administrative Area" id="administrativeArea" name="color[administrativeArea]" value = "<%=color.administrativeArea%>" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="location">Country:</label>
+        <input class="form-control" type="text" placeholder="Country" id="country" name="color[country]" value = "<%=color.country%>" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="Population">Population:</label>
+        <input class="form-control" type="text" placeholder="Population" id="population" name="color[population]" value = "<%=color.population%>" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="Image">Image URL:</label>
+        <input class="form-control" type="text" placeholder="Image" id="Image" name="color[image]" value = "<%=color.image%>" required>
+        <div class="valid-feedback" >
+          Looks good!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="price" class=form-label> Color Price</label>
+        <div class="input-group">
+          <span class="input-group-text" id="price-label">$</span>
+          <input type="text" class="form-control" name="color[price]" id="price"
+            aria-label="Amount (to the nearest dollar)" value = "<%=color.price%>" required>
+          <span class="input-group-text">.00</span>
+        </div>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="Description">Description:</label>
+        <textarea class="form-control" type="text" placeholder="Description" id="Description"
+          name="color[description]" value = "<%=color.description%>" required></textarea>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-info">Update Color</button>
+      </div>
+      <footer>
+        <a href="/colors/<%=color._id%>">Back to <%=color.name%> Details</a>
+      </footer>
+
+    </form>
+  </div>
+</div>
