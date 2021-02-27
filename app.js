@@ -74,27 +74,13 @@ app.delete('/colors/:id', catchAsync(async(req, res)=>{
     const color = await Color.findByIdAndDelete(id);
     res.redirect('/colors');
 }))
-/* app.get('/campgrounds', async (req, res) => {
-    const campgrounds = await Campground.find({});
-    res.render('campgrounds/index', { campgrounds })
-}); */
-
+app.all('*', (req, res, next)=>{
+    next(new ExpressError('Page Not Found', 404))
+})
 app.use((err, req, res, next)=>{
     const {statusCode = 500, message = 'Something went wrong'} = err;
     res.status(statusCode).send(message);
 })
-app.all('*', (req, res, next)=>{
-    next(new ExpressError('Page Not Found', 404))
-})
-
-/* app.use((err, req, res, next) => {
-    const { statusCode = 500, message = 'Something wrong' } = err;
-    //if (!err.message) err.message = 'Oh No, Something Went Wrong!'
-    res.status(statusCode).send('error', { err })
-})
-app.all('*', (req, res, next) => {
-    next(new ExpressError('Page Not Found', 404))
-}) */
 app.listen(3000, ()=>{
  console.log("listen in on port 3000");
 })
